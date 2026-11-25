@@ -1,0 +1,285 @@
+
+**** 08/06/26 17:01:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\user\Documents\PSpice\project_battery_pmos+npn.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Thu Aug 06 17:01:38 2026
+
+
+
+** Analysis setup **
+.tran 50m 5 0 50m
+.OP 
+
+
+* From [PSPICE NETLIST] section of c:\orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "project_battery_pmos+npn.net"
+
+
+
+**** INCLUDING project_battery_pmos+npn.net ****
+* Schematics Netlist *
+
+
+
+R_R1         $N_0001 in  100k  
+M_M1         $N_0002 $N_0001 in in IRF9140
+M_M2         $N_0002 $N_0001 out out IRF9140
+V_Vsource         in 0 12
+R_R_laptop_pwr_rail         0 out  10  
+V_V_comp-signal         $N_0003 0 DC 0 AC 0
++SIN 3 3 1 0 0 0
+Q_Q2         $N_0004 $N_0003 0 Q2N2222
+R_R2         $N_0004 in  100k  
+Q_Q1         $N_0001 $N_0004 0 Q2N2222
+
+**** RESUMING project_battery_pmos+npn.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 08/06/26 17:01:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\user\Documents\PSpice\project_battery_pmos+npn.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N2222         
+               NPN             
+          IS   14.340000E-15 
+          BF  255.9          
+          NF    1            
+         VAF   74.03         
+         IKF     .2847       
+         ISE   14.340000E-15 
+          NE    1.307        
+          BR    6.092        
+          NR    1            
+          RB   10            
+          RC    1            
+         CJE   22.010000E-12 
+         MJE     .377        
+         CJC    7.306000E-12 
+         MJC     .3416       
+          TF  411.100000E-12 
+         XTF    3            
+         VTF    1.7          
+         ITF     .6          
+          TR   46.910000E-09 
+         XTB    1.5          
+          CN    2.42         
+           D     .87         
+
+
+**** 08/06/26 17:01:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\user\Documents\PSpice\project_battery_pmos+npn.sch
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IRF9140         
+               PMOS            
+       LEVEL    3            
+           L    2.000000E-06 
+           W    1.9          
+         VTO   -3.67         
+          KP   10.150000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          RD     .06066      
+          RS     .0706       
+          RG     .811        
+         RDS  444.400000E+03 
+          IS   52.230000E-18 
+          JS    0            
+           N    2            
+          PB     .8          
+        PBSW     .8          
+         CBD    2.141000E-09 
+          CJ    0            
+        CJSW    0            
+          TT  140.000000E-09 
+        CGSO  877.200000E-12 
+        CGDO  369.300000E-12 
+        CGBO    0            
+         TOX  100.000000E-09 
+          XJ    0            
+          UO  300            
+       UCRIT   10.000000E+03 
+       DELTA    0            
+         ETA    0            
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    0            
+       XPART    0            
+
+
+**** 08/06/26 17:01:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\user\Documents\PSpice\project_battery_pmos+npn.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   12.0000  (  out)   11.6640  ($N_0001)     .0079                       
+
+($N_0002)   11.8320                   ($N_0003)    0.0000                       
+
+($N_0004)     .6438                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vsource   -1.167E+00
+    V_V_comp-signal   1.080E-13
+
+    TOTAL POWER DISSIPATION   1.40E+01  WATTS
+
+
+**** 08/06/26 17:01:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\user\Documents\PSpice\project_battery_pmos+npn.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q2        Q_Q1      
+MODEL        Q2N2222     Q2N2222   
+IB          -1.08E-13    1.14E-04 
+IC           7.72E-13    1.20E-04 
+VBE          0.00E+00    6.44E-01 
+VBC         -6.44E-01    6.36E-01 
+VCE          6.44E-01    7.91E-03 
+BETADC      -7.15E+00    1.06E+00 
+GM           5.50E-13    8.76E-03 
+RPI          2.32E+12    4.76E+03 
+RX           1.00E+01    1.00E+01 
+RO           9.83E+11    3.99E+01 
+CBE          2.20E-11    5.01E-11 
+CBC          5.91E-12    1.20E-09 
+CJS          0.00E+00    0.00E+00 
+BETAAC       1.28E+00    4.17E+01 
+CBX/CBX2     0.00E+00    0.00E+00 
+FT/FT2       3.14E-03    1.12E+06 
+
+
+
+
+**** MOSFETS
+
+
+NAME         M_M1        M_M2      
+MODEL        IRF9140     IRF9140   
+ID          -1.17E+00    1.17E+00 
+VGS         -1.20E+01   -1.17E+01 
+VDS         -1.68E-01    1.68E-01 
+VBS          0.00E+00    0.00E+00 
+VTH         -3.67E+00   -3.67E+00 
+VDSAT       -8.24E+00   -8.08E+00 
+Lin0/Sat1   -1.00E+00   -1.00E+00 
+if          -1.00E+00   -1.00E+00 
+ir          -1.00E+00   -1.00E+00 
+TAU         -1.00E+00   -1.00E+00 
+GM           1.42E-01    1.44E-01 
+GDS          7.93E+01    7.78E+01 
+GMB          0.00E+00    0.00E+00 
+CBD          2.02E-09    2.28E-09 
+CBS          1.40E-19    1.41E-19 
+CGSOV        1.67E-09    1.67E-09 
+CGDOV        7.02E-10    7.02E-10 
+CGBOV        0.00E+00    0.00E+00 
+CGS          6.56E-10    6.56E-10 
+CGD          6.56E-10    6.56E-10 
+CGB          0.00E+00    0.00E+00 
+**** 08/06/26 17:01:41 ********* PSpice 9.2 (Mar 2000) ******** ID# 0 ********
+
+ * C:\Users\user\Documents\PSpice\project_battery_pmos+npn.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   in)   12.0000  (  out) 238.9E-06  ($N_0001)   12.0000                       
+
+($N_0002)    1.3819                   ($N_0003)    3.0000                       
+
+($N_0004)     .0110                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vsource   -1.438E-04
+    V_V_comp-signal  -2.159E-01
+
+    TOTAL POWER DISSIPATION   6.49E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .03
+
